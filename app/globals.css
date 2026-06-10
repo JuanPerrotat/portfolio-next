@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-fira-code);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0e1a;
+  color: #f0f4ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6c63ff 0%, #3b82f6 50%, #06d6a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border card */
+.gradient-border {
+  position: relative;
+  border-radius: 12px;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.4), rgba(59, 130, 246, 0.2), rgba(6, 214, 160, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Dot-grid hero background */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Glow dot for timeline */
+.dot-glow {
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2), 0 0 16px rgba(108, 99, 255, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #6c63ff;
+  border-radius: 4px;
+}
